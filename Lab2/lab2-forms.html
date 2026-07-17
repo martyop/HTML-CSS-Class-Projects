@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2 - Coffee Order Form</title>
+  </head>
+  <body>
+    <h1>Coffee Order Form</h1>
+    <p>Please enter your order details below.</p>
+
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="drink">Coffee Type:</label><br />
+      <select id="drink" name="drink">
+        <option value="latte">Latte</option>
+        <option value="cappuccino">Cappuccino</option>
+        <option value="americano">Americano</option>
+      </select><br /><br />
+
+      <label for="instructions">Special Instructions:</label><br />
+      <textarea id="instructions" name="instructions" rows="4" cols="40"></textarea><br /><br />
+
+      <input type="submit" value="Submit Order" />
+    </form>
+  </body>
+</html>
