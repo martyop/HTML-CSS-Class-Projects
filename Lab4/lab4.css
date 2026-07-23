@@ -1,0 +1,9 @@
+.box {
+  border: 5px solid blue;
+  padding: 20px;
+  margin: 20px;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+
+/* border-box makes the border and padding count inside the box's total size */
