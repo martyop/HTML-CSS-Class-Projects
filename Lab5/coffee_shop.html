@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Haven</title>
+  <style>
+    :root {
+      --cream: #f6efe7;
+      --latte: #d8b69d;
+      --mocha: #7e5a41;
+      --espresso: #866d5e;
+      --foam: #fff8f0;
+      --shadow: rgba(66, 40, 24, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      background: linear-gradient(180deg, #d88517 0%, #716658 100%);
+      color: var(--espresso);
+      font-family: 'Georgia', 'Courier New', sans-serif;
+      line-height: 1.6;
+      padding: 1.25rem;
+    }
+
+    header.header {
+      grid-area: header;
+      background: rgba(87, 18, 34, 0.95);
+      padding: 2rem 1.5rem;
+      border-radius: 24px;
+      box-shadow: 0 18px 40px var(--shadow);
+      text-align: center;
+      border: 1px solid rgba(142, 102, 75, 0.18);
+    }
+
+    header.header h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    header.header p {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #6f4d36;
+    }
+
+    nav.nav {
+      grid-area: nav;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 1.25rem 1.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(142, 102, 75, 0.16);
+      box-shadow: 0 12px 30px rgba(66, 40, 24, 0.12);
+    }
+
+    nav.nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    nav.nav a {
+      color: var(--espresso);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.65rem 1rem;
+      border-radius: 14px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    nav.nav a:hover,
+    nav.nav a:focus-visible {
+      background: var(--latte);
+      color: #fff;
+    }
+
+    main.main-content {
+      grid-area: main;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 1.75rem 1.5rem;
+      border-radius: 26px;
+      box-shadow: 0 18px 40px rgba(66, 40, 24, 0.12);
+      border: 1px solid rgba(142, 102, 75, 0.14);
+    }
+
+    main.main-content h2 {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: 0.04em;
+      color: var(--mocha);
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .flex-item {
+      flex: 1 1 min(220px, 100%);
+      min-width: 180px;
+      background: linear-gradient(135deg, #fff8f0 0%, #f6e7da 100%);
+      border: 1px solid rgba(142, 102, 75, 0.18);
+      border-radius: 20px;
+      padding: 1.6rem 1.25rem;
+      text-align: center;
+      box-shadow: 0 14px 28px rgba(66, 40, 24, 0.10);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--espresso);
+    }
+
+    footer.footer {
+      grid-area: footer;
+      text-align: center;
+      padding: 1rem 1.25rem;
+      border-radius: 18px;
+      background: rgba(255, 248, 239, 0.85);
+      color: #5f3d2c;
+      border: 1px solid rgba(142, 102, 75, 0.12);
+    }
+
+    @media (min-width: 820px) {
+      body {
+        grid-template-columns: 240px minmax(360px, 1fr);
+        grid-template-areas:
+          "header header"
+          "nav main"
+          "footer footer";
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      nav.nav ul {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+
+      nav.nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      nav.nav a {
+        flex: 1 1 calc(50% - 0.75rem);
+        text-align: center;
+      }
+
+      main.main-content,
+      nav.nav,
+      header.header,
+      footer.footer {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Java Haven Tri-C in the Land</h1>
+    <p>Your daily dose of caffeine, coding and comfort.</p>
+  </header>
+  
+  <nav class="nav">
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main class="main-content">
+    <h2>Featured Coffees</h2>
+    <div class="flex-container">
+      <div class="flex-item">Tri-C IT Espresso</div>
+      <div class="flex-item">Tri-C BIO Cappuccino</div>
+      <div class="flex-item">Tri-C Sports Latte</div>
+      <div class="flex-item">Tri-C MATH Mocha</div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <p>&copy; 2026 Java Haven. All Rights Respected</p>
+  </footer>
+</body>
+</html>
